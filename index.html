@@ -1,24 +1,45 @@
-body {
-  background: #0d0d0d;
-  color: #33ff99;
-  font-family: 'IBM Plex Mono', monospace;
-  padding: 3em;
-}
-h1 {
-  color: #ff3c00;
-  text-shadow: 0 0 6px #ff3c00;
-}
-.note {
-  border-left: 3px solid #33ff99;
-  padding-left: 1em;
-}
-input[type=text] {
-  background: #111;
-  color: #33ff99;
-  border: 1px solid #444;
-}
-button {
-  background: #222;
-  color: #fff;
-  border: 1px solid #444;
-}
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 OC 抽卡包</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>✨ OC 角色抽卡系統 ✨</h1>
+
+        <div class="stage">
+            <div id="card-pack" class="pack-container" onclick="openPack()">
+                <div class="pack-wrapper">
+                    <div class="pack-part top"></div>
+                    <div class="pack-content">
+                        <span>TAP TO OPEN</span>
+                    </div>
+                    <div class="pack-part bottom"></div>
+                </div>
+            </div>
+
+            <div id="result-display" class="result-card hidden">
+                <div class="rarity-badge" id="card-rarity">SSR</div>
+                <div class="card-frame">
+                    <img id="card-image" src="" alt="Character">
+                </div>
+                <h3 id="card-name">角色名稱</h3>
+                <button class="btn-main" onclick="resetPack()">再抽一包</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="collection-section">
+            <h2>角色圖鑑 (<span id="collected-count">0</span> / <span id="total-count">0</span>)</h2>
+            <div id="collection-grid" class="grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
