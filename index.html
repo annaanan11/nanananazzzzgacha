@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的 OC 抽卡包</title>
+    <title>我的 OC 抽卡包 (五連抽版)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,22 +13,35 @@
 
         <div class="stage">
             <div id="card-pack" class="pack-container" onclick="openPack()">
-                <div class="pack-wrapper">
-                    <div class="pack-part top"></div>
-                    <div class="pack-content">
-                        <span>TAP TO OPEN</span>
+                <div class="pack-cap">
+                    <div class="jagged-top"></div>
+                    <div class="cap-body">✂ 撕開此處</div>
+                </div>
+                <div class="pack-base">
+                    <div class="base-body">
+                        OC 卡包<br>
+                        <span style="font-size: 14px; font-weight: normal;">內含 5 張卡片</span>
                     </div>
-                    <div class="pack-part bottom"></div>
+                    <div class="jagged-bottom"></div>
                 </div>
             </div>
 
-            <div id="result-display" class="result-card hidden">
-                <div class="rarity-badge" id="card-rarity">SSR</div>
-                <div class="card-frame">
-                    <img id="card-image" src="" alt="Character">
+            <div id="result-display" class="hidden">
+                <div class="carousel-container">
+                    <button id="btn-prev" class="nav-btn" onclick="prevCard()">◀</button>
+                    
+                    <div class="card-showcase">
+                        <div class="rarity-badge" id="card-rarity">SSR</div>
+                        <div class="card-frame">
+                            <img id="card-image" src="" alt="Character">
+                        </div>
+                        <h3 id="card-name">角色名稱</h3>
+                        <p class="card-counter">第 <span id="current-page">1</span> / 5 張</p>
+                    </div>
+
+                    <button id="btn-next" class="nav-btn" onclick="nextCard()">▶</button>
                 </div>
-                <h3 id="card-name">角色名稱</h3>
-                <button class="btn-main" onclick="resetPack()">再抽一包</button>
+                <button class="btn-main" onclick="resetPack()">再抽一包 (5張)</button>
             </div>
         </div>
 
