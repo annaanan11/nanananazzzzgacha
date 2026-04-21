@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的 OC 抽卡包 (存檔版)</title>
+    <title>我的 OC 抽卡包 (疊卡特效版)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,6 +12,7 @@
         <h1>✨ OC 角色抽卡系統 ✨</h1>
 
         <div class="stage">
+            
             <div id="card-pack" class="pack-container" onclick="openPack()">
                 <div class="pack-cap">
                     <div class="jagged-top"></div>
@@ -27,21 +28,18 @@
             </div>
 
             <div id="result-display" class="hidden">
+                <p class="hint-text">左右滑動或使用 ＜ ＞ 翻頁</p>
+                
                 <div class="carousel-container">
-                    <button id="btn-prev" class="nav-btn" onclick="prevCard()">◀</button>
+                    <button id="btn-prev" class="nav-btn" onclick="prevCard()">＜</button>
                     
-                    <div class="card-showcase">
-                        <div class="rarity-badge" id="card-rarity">SSR</div>
-                        <div class="card-frame">
-                            <img id="card-image" src="" alt="Character">
+                    <div id="deck-container">
                         </div>
-                        <h3 id="card-name">角色名稱</h3>
-                        <p class="card-counter">第 <span id="current-page">1</span> / 5 張</p>
-                    </div>
 
-                    <button id="btn-next" class="nav-btn" onclick="nextCard()">▶</button>
+                    <button id="btn-next" class="nav-btn" onclick="nextCard()">＞</button>
                 </div>
-                <button class="btn-main" onclick="resetPack()">再抽一包</button>
+                
+                <button class="btn-main" onclick="resetPack()">返回卡包頁面</button>
             </div>
         </div>
 
