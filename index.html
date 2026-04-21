@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的 OC 抽卡包 (五連抽版)</title>
+    <title>我的 OC 抽卡包 (存檔版)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -41,16 +41,21 @@
 
                     <button id="btn-next" class="nav-btn" onclick="nextCard()">▶</button>
                 </div>
-                <button class="btn-main" onclick="resetPack()">再抽一包 (5張)</button>
+                <button class="btn-main" onclick="resetPack()">再抽一包</button>
             </div>
         </div>
 
         <hr>
 
-        <div class="collection-section">
-            <h2>角色圖鑑 (<span id="collected-count">0</span> / <span id="total-count">0</span>)</h2>
-            <div id="collection-grid" class="grid"></div>
+        <div class="collection-header">
+            <h2>角色圖鑑 (<span id="collected-count">0</span> / <span id="total-count">50</span>)</h2>
+            <div class="system-buttons">
+                <button onclick="downloadSave()" class="btn-sys download">📥 下載存檔</button>
+                <button onclick="clearSave()" class="btn-sys danger">🗑 刪除存檔</button>
+            </div>
         </div>
+        
+        <div id="collection-grid" class="grid"></div>
     </div>
 
     <script src="script.js"></script>
