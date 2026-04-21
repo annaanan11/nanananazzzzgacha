@@ -45,6 +45,7 @@ body {
     width: 200px;
     height: 300px;
     perspective: 1000px; /* 增加 3D 透視感 */
+    margin-right: 100px; /* 🌟 新增這行：把右邊的空間拉開，不讓卡片擋住按鈕 */
 }
 
 /* 單張卡片的基本樣式 */
@@ -81,7 +82,19 @@ body {
 .rarity-badge { background: #f1c40f; color: #333; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 14px;}
 .deck-card h3 { margin: 10px 0 0 0; font-size: 18px; color: white; }
 
-.nav-btn { background: transparent; color: #fff; border: 1px solid #777; width: 45px; height: 90px; border-radius: 10px; cursor: pointer; font-size: 20px; transition: 0.2s; }
+.nav-btn { 
+    position: relative;  /* 🌟 新增這行：讓 z-index 產生作用 */
+    z-index: 50;         /* 🌟 新增這行：確保按鈕永遠在卡片的最上層 */
+    background: transparent; 
+    color: #fff; 
+    border: 1px solid #777; 
+    width: 45px; 
+    height: 90px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-size: 20px; 
+    transition: 0.2s; 
+}
 .nav-btn:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
 .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
 
