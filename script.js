@@ -109,22 +109,24 @@ function updateCardDisplay() {
         // 計算這張卡與「現在正在看的卡」的距離差
         let offset = index - currentCardIndex;
         
+        // 取得距離的絕對值 (無論左右，距離中間多遠)
+        let absOffset = Math.abs(offset); 
+        
         if (offset === 0) {
-            // 目前正在看的這張卡：顯示在最前面，大小正常
+            // 目前正在看的卡片：顯示在最前面，大小正常
             card.style.transform = `translateX(0px) scale(1)`;
             card.style.zIndex = 10;
             card.style.opacity = 1;
-        } else if (offset > 0) {
-            // 排在後面的卡：往右推一點，並且稍微縮小
-            // offset * 30px 代表每張卡往右露出一點邊緣
-            card.style.transform = `translateX(${offset * 30}px) scale(${1 - offset * 0.05})`;
-            card.style.zIndex = 10 - offset; // 越後面的卡 z-index 越小，才會被蓋住
-            card.style.opacity = 1;
         } else {
-            // 已經看過(被滑掉)的卡：往左邊飛出去並變透明
-            card.style.transform = `translateX(-100px) scale(0.8)`;
-            card.style.zIndex = 0;
-            card.style.opacity = 0;
+            // 排在旁邊的卡片 (包含左邊與右邊)
+            // 如果 offset 是負數(左邊)，translateX 會自動變成往左推 (-30px, -60px...)
+            card.style.transform = `translateX(${offset * 30}px) scale(${1 - absOffset * 0.05})`;
+            
+            // 離中間越遠的卡，z-index 越小，確保會被中間的卡蓋住
+            card.style.zIndex = 10 - absOffset; 
+            
+            // 🌟 確保所有卡片都是可見的，不會隱藏消失
+            card.style.opacity = 1; 
         }
     });
 
