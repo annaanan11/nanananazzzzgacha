@@ -44,8 +44,9 @@ body {
     position: relative;
     width: 200px;
     height: 300px;
-    perspective: 1000px; /* 增加 3D 透視感 */
-    margin-right: 100px; /* 🌟 新增這行：把右邊的空間拉開，不讓卡片擋住按鈕 */
+    perspective: 1000px;
+    margin-right: 100px; 
+    margin-left: 100px;  /* 🌟 新增這行：把左邊的空間也拉開，保護左邊的按鈕 */
 }
 
 /* 單張卡片的基本樣式 */
